@@ -36,8 +36,9 @@ Use this library solely within your "*_test.v" file.
 ## Installation
 
 - [Using V installer](#using-v-installer)
+- [Manual installation](#manual-installation)
 
-### using V installer
+### Using V installer
 
 In your root folder, open a terminal and run this command:
 
