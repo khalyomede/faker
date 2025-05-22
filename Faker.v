@@ -2,7 +2,7 @@ module faker
 
 import io { BufferedReader, BufferedReaderConfig }
 import os { File }
-import rand
+import rand { u32_in_range }
 
 pub struct Faker {
     pub:
@@ -80,10 +80,12 @@ fn (mut this Faker) random_line_in_file(file string) string {
     return ""
 }
 
-fn (mut this Faker) random_index_in_file(file string, lines_count u8) u8 {
-    random_index := u8_in_range(0, lines_count - 1) or {
+fn (mut this Faker) random_index_in_file(file string, lines_count u16) u16 {
+    u32_random_index := u32_in_range(0, lines_count - 1) or {
         panic(err)
     }
+
+    random_index := u16(u32_random_index)
 
     mut file_cache := unsafe {
         get_cache()
@@ -159,7 +161,7 @@ fn (mut this Faker) get_file(name string) !File {
     return opened_file
 }
 
-fn (mut this Faker) get_lines_count(name string, mut reader BufferedReader) u8 {
+fn (mut this Faker) get_lines_count(name string, mut reader BufferedReader) u16 {
     mut file_cache := unsafe {
         get_cache()
     }
@@ -184,7 +186,7 @@ fn (mut this Faker) get_lines_count(name string, mut reader BufferedReader) u8 {
         return lines_count
     }
 
-    mut lines_count := u8(0)
+    mut lines_count := u16(0)
 
     for {
         _ := reader.read_line() or { break }
@@ -206,8 +208,3 @@ fn (mut this Faker) get_file_path_for_language(name string) string {
     return os.dir(@FILE) + "/data/${this.lang}/${name}.txt"
 }
 
-fn u8_in_range(min u8, max u8) !u8 {
-    random_u32 := rand.u32_in_range(min, max)!
-
-    return u8(random_u32)
-}

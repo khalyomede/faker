@@ -13,7 +13,7 @@ import sync { RwMutex, new_rwmutex }
 struct FileCache {
     pub mut:
         files map[string]File
-        lines_count map[string]u8
-        picked_indexes map[string][]u8 // used to avoid duplicates
+        lines_count map[string]u16
+        picked_indexes map[string][]u16 // used to avoid duplicates
         mutex &RwMutex = new_rwmutex()
 }
