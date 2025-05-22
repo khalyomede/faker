@@ -7,11 +7,19 @@ import rand
 pub struct Faker {
     pub:
         lang Lang = .en
+}
 
-    mut:
-        files map[string]File
-        lines_count map[string]u8
-        picked_indexes map[string][]u8 // used to avoid duplicates
+@[unsafe]
+fn get_cache() &FileCache {
+    mut static cache := &FileCache(nil)
+    mut static initialized := false
+
+    if !initialized {
+        cache = &FileCache{}
+        initialized = true
+    }
+
+    return cache
 }
 
 /*
@@ -29,10 +37,8 @@ fn (mut this Faker) random_line_in_file(file string) string {
     file_path := this.get_file_path_for_language(file)
 
     mut index := 0
-    mut opened_file := this.get_file(file) or { panic("Failed to open file \"${file_path}\".") }
-
-    defer {
-        opened_file.close()
+    mut opened_file := unsafe {
+        this.get_file(file) or { panic("Failed to open file \"${file_path}\".") }
     }
 
     mut reader := io.new_buffered_reader(BufferedReaderConfig{
@@ -79,34 +85,103 @@ fn (mut this Faker) random_index_in_file(file string, lines_count u8) u8 {
         panic(err)
     }
 
-    if this.picked_indexes[file].len == lines_count || !(file in this.picked_indexes) {
-        this.picked_indexes[file] = [random_index]
+    mut file_cache := unsafe {
+        get_cache()
+    }
+
+    file_cache.mutex.rlock()
+
+    it_should_reset_picked_indexes := file_cache.picked_indexes[file].len == lines_count || !(file in file_cache.picked_indexes)
+
+    file_cache.mutex.runlock()
+
+    if  it_should_reset_picked_indexes {
+        file_cache.mutex.lock()
+
+        file_cache.picked_indexes[file] = [random_index]
+
+        file_cache.mutex.unlock()
 
         return random_index
     }
 
-    if this.picked_indexes[file].contains(random_index) {
+    file_cache.mutex.rlock()
+
+    it_should_generate_new_index := file_cache.picked_indexes[file].contains(random_index)
+
+    file_cache.mutex.runlock()
+
+    if it_should_generate_new_index {
         return this.random_index_in_file(file, lines_count)
     }
 
-    this.picked_indexes[file] << random_index
+    file_cache.mutex.lock()
+
+    file_cache.picked_indexes[file] << random_index
+
+    file_cache.mutex.unlock()
 
     return random_index
 }
 
 fn (mut this Faker) get_file(name string) !File {
-    return this.files[name] or {
-        opened_file := os.open(this.get_file_path_for_language(name))!
-
-        this.files[name] = opened_file
-
-        opened_file
+    mut file_cache := unsafe {
+        get_cache()
     }
+
+    file_cache.mutex.rlock()
+
+    file_in_cache := name in file_cache.files
+
+    file_cache.mutex.runlock()
+
+    if  file_in_cache {
+        file_cache.mutex.rlock()
+        opened_file := file_cache.files[name] or {
+            file_cache.mutex.runlock()
+
+            panic("Key ${name} not found in file cache.")
+        }
+
+        file_cache.mutex.runlock()
+
+        return opened_file
+    }
+
+    opened_file := os.open(this.get_file_path_for_language(name))!
+
+    file_cache.mutex.lock()
+
+    file_cache.files[name] = opened_file
+
+    file_cache.mutex.unlock()
+
+    return opened_file
 }
 
 fn (mut this Faker) get_lines_count(name string, mut reader BufferedReader) u8 {
-    if name in this.lines_count {
-        return this.lines_count[name]
+    mut file_cache := unsafe {
+        get_cache()
+    }
+
+    file_cache.mutex.rlock()
+
+    file_in_cache := name in file_cache.lines_count
+
+    file_cache.mutex.runlock()
+
+    if file_in_cache {
+        file_cache.mutex.rlock()
+
+        lines_count := file_cache.lines_count[name] or {
+            file_cache.mutex.runlock()
+
+            panic("Key ${name} not found in lines count cache.")
+        }
+
+        file_cache.mutex.runlock()
+
+        return lines_count
     }
 
     mut lines_count := u8(0)
@@ -117,7 +192,12 @@ fn (mut this Faker) get_lines_count(name string, mut reader BufferedReader) u8 {
         lines_count += 1
     }
 
-    this.lines_count[name] = lines_count
+
+    file_cache.mutex.lock()
+
+    file_cache.lines_count[name] = lines_count
+
+    file_cache.mutex.unlock()
 
     return lines_count
 }
