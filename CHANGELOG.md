@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - All `fake := Faker{}` instance now share a single cache and file opens are reduced on subsequent Fake data method call to improve performance.
 - New `fake.using_lang(.en)` method to switch language after generating fake data in another lang.
+- Add a way to make the random values deterministic (seed), meaning two differents instance of `fake := Faker{}` will generate the same random values by setting their seed using `fake.using_seed(36)`. You can go back to the original behavior (completely unique values) using `fake.clear_seed()`.
 
 ### Fixed
 

@@ -55,7 +55,6 @@ v install khalyomede.faker
 
 ## Examples
 
-- [Switching language](#switching-language)
 - Fake data
   - Date
     - [Future date](#future-date)
@@ -71,46 +70,9 @@ v install khalyomede.faker
   - Other
     - [Boolean](#boolean)
     - [Random element](#random-element)
+- [Switching language](#switching-language)
 - [Extending/Custom fake data](#extendingcustom-fake-data)
-
-### Switching language
-
-- [From instanciation](#from-instanciation)
-- [In between tests](#in-between-tests)
-
-#### From instanciation
-
-```v
-module test
-
-import khalyomede.faker { Faker }
-
-fn test_it_switches_language() {
-  mut fake := Faker{lang: .en}
-
-  // ...
-}
-```
-
-#### In between tests
-
-```v
-module test
-
-import khalyomede.faker { Faker }
-
-fn test_it_switches_language_after_generating_data() {
-  mut fake := Faker{lang: .en}
-
-  book_excerpt := fake.sentence()
-
-  fake.using_lang(.en)
-
-  // ...
-}
-```
-
-[Back to examples](#examples)
+- [Deterministic same values (seed)]()
 
 ### Boolean
 
@@ -272,6 +234,45 @@ fn test_it_generates_word() {
 
 [Back to examples](#examples)
 
+### Switching language
+
+- [From instanciation](#from-instanciation)
+- [In between tests](#in-between-tests)
+
+#### From instanciation
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_switches_language() {
+  mut fake := Faker{lang: .en}
+
+  // ...
+}
+```
+
+#### In between tests
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_switches_language_after_generating_data() {
+  mut fake := Faker{lang: .en}
+
+  book_excerpt := fake.sentence()
+
+  fake.using_lang(.en)
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
 ## Extending/Custom fake data
 
 - [Using struct inheritance](#using-struct-inheritance)
@@ -322,6 +323,67 @@ fn test_it_generates_fruit() {
 ```
 
 [Back to examples](#examples)
+
+### Deterministic same values (seed)
+
+- [Same random values across different tests](#same-random-values-across-different-tests)
+- [Clearing the seed afterward](#clearing-the-seed-afterward)
+
+#### Same random values across different tests
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_the_same_word_as_second_test() {
+  mut fake := Faker{}
+
+  fake.using_seed(36)
+
+  word := fake.word() // same as second test word
+}
+
+fn test_it_generates_the_same_word_as_first_test() {
+  mut fake := Faker{}
+
+  fake.using_seed(36)
+
+  word := fake.word() // same as first test word
+}
+```
+
+#### Clearing the seed afterward
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_the_same_word_as_second_test() {
+  mut fake := Faker{}
+
+  fake.using_seed(36)
+
+  first_word := fake.word() // same as second test's first word
+
+  fake.clear_seed()
+
+  second_word := fake.word() // Different than second test's second word
+}
+
+fn test_it_generates_the_same_word_as_first_test() {
+  mut fake := Faker{}
+
+  fake.using_seed(36)
+
+  first_word := fake.word() // same as first test's first word
+
+  fake.clear_seed()
+
+  second_word := fake.word() // Different than first test's second word
+}
+```
 
 ## Q&A
 

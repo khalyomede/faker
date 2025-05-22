@@ -2,11 +2,13 @@ module faker
 
 import io { BufferedReader, BufferedReaderConfig }
 import os { File }
-import rand { u32_in_range }
+import rand.pcg32 { PCG32RNG }
 
 pub struct Faker {
     pub mut:
         lang Lang = .en
+        randomizer PCG32RNG
+        seeded bool
 }
 
 @[unsafe]
@@ -81,11 +83,11 @@ fn (mut this Faker) random_line_in_file(file string) string {
 }
 
 fn (mut this Faker) random_index_in_file(file string, lines_count u16) u16 {
-    u32_random_index := u32_in_range(0, lines_count - 1) or {
-        panic(err)
-    }
+    random_index := this.random_number(lines_count - 1)
 
-    random_index := u16(u32_random_index)
+    if this.seeded {
+        return random_index
+    }
 
     mut file_cache := unsafe {
         get_cache()
