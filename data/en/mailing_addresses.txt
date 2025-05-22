@@ -1,0 +1,10 @@
+New York, NY, 10001, USA
+London, ENG, SW1A 1AA, UK
+Paris, Île-de-France, 75001, France
+Berlin, BE, 10115, Germany
+Sydney, NSW, 2000, Australia
+Rome, RM, 00100, Italy
+Mumbai, MH, 400001, India
+Tokyo, Kantō, 100-0001, Japan
+São Paulo, SP, 01000-000, Brazil
+Moscow, Moscow Oblast, 101000, Russia

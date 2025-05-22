@@ -1,0 +1,15 @@
+document.pdf
+resume.docx
+report.csv
+image.jpeg
+profile.png
+logfile.log
+database.sqlite
+archive.tar.gz
+script.sh
+presentation.pptx
+README.md
+index.html
+app.js
+main.py
+module.rs

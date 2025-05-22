@@ -1,0 +1,7 @@
+SELECT * FROM users WHERE active = 1;
+
+INSERT INTO orders (user_id, total, status) VALUES (1, 99.99, 'pending');
+
+UPDATE products SET stock = stock - 1 WHERE id = 42;
+
+DELETE FROM sessions WHERE created_at < NOW() - INTERVAL '30 days';

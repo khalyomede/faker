@@ -1,0 +1,10 @@
+alice@example.com
+bob.smith@gmail.com
+charlie99@yahoo.com
+diana.jones@protonmail.com
+user.name+filter@domain.co.uk
+john_doe@company.org
+jenny@outlook.com
+hello@startup.ai
+admin@website.io
+support@helpdesk.net

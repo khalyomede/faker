@@ -1,0 +1,10 @@
+https://example.com
+http://localhost:3000
+https://dev.api.company.org
+https://shop.example.co.uk
+http://intranet.internal
+https://news.ycombinator.com
+https://github.com
+https://my-site.dev
+https://dashboard.app.io
+http://blog.engineering.net

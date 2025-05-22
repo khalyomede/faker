@@ -1,0 +1,11 @@
+<div class="card">
+  <h1>Title</h1>
+  <p>This is a <strong>sample</strong> paragraph.</p>
+</div>
+
+<ul>
+  <li>Item A</li>
+  <li>Item B</li>
+</ul>
+
+<img src="image.jpg" alt="Sample image" />
