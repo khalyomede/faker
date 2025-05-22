@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### [0.2.0] - 2025-05-22
+
 ### Added
 
 - All `fake := Faker{}` instance now share a single cache and file opens are reduced on subsequent Fake data method call to improve performance.
