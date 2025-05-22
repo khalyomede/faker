@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - All `fake := Faker{}` instance now share a single cache and file opens are reduced on subsequent Fake data method call to improve performance.
+- New `fake.using_lang(.en)` method to switch language after generating fake data in another lang.
 
 ### Fixed
 

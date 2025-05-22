@@ -75,6 +75,11 @@ v install khalyomede.faker
 
 ### Switching language
 
+- [From instanciation](#from-instanciation)
+- [In between tests](#in-between-tests)
+
+#### From instanciation
+
 ```v
 module test
 
@@ -82,6 +87,24 @@ import khalyomede.faker { Faker }
 
 fn test_it_switches_language() {
   mut fake := Faker{lang: .en}
+
+  // ...
+}
+```
+
+#### In between tests
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_switches_language_after_generating_data() {
+  mut fake := Faker{lang: .en}
+
+  book_excerpt := fake.sentence()
+
+  fake.using_lang(.en)
 
   // ...
 }

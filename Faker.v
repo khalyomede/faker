@@ -5,7 +5,7 @@ import os { File }
 import rand { u32_in_range }
 
 pub struct Faker {
-    pub:
+    pub mut:
         lang Lang = .en
 }
 
