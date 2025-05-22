@@ -97,7 +97,7 @@ module test
 import khalyomede.faker { Faker }
 
 fn test_it_returns_a_value() {
-  mut fake := Faker{}
+  fake := Faker{}
 
   terms_of_use_accepted := fake.boolean()
 
@@ -133,7 +133,7 @@ module test
 import khalyomede.faker { Faker }
 
 fn test_it_generates_future_date() {
-  mut fake := Faker{}
+  fake := Faker{}
 
   meeting_date := fake.future_date()
 
@@ -169,7 +169,7 @@ module test
 import khalyomede.faker { Faker }
 
 fn test_it_generates_past_date() {
-  mut fake := Faker{}
+  fake := Faker{}
 
   payment_date := fake.past_date()
 }
@@ -185,7 +185,7 @@ module test
 import khalyomede.faker { Faker }
 
 fn test_it_generates_random_fruit() {
-  mut fake := Faker{}
+  fake := Faker{}
 
   fruits := ["banana", "kiwi", "apple"]
 
@@ -221,7 +221,7 @@ module test
 import khalyomede.faker { Faker }
 
 fn test_it_returns_url() {
-  mut fake := Faker{}
+  fake := Faker{}
 
   payment_id := fake.uuid_v4()
 
