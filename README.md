@@ -396,14 +396,9 @@ The `Fake{}` instance will use caching to improve subsequent call to the same fu
 
 For example, calling 10 times `fake.first_name()` will read the total number of first names once, then it will hold the number of lines in cache.
 
-
 This is to help pick a random index in the range [0, number of first names].
 
-This also prevents to store a constant with the number of fake first names in the code.
-
-_We could improve the performance by using a `__global` property, which allow sharing the cache across all test suites (not only per test suite), at the cost of forcing develpers to use the `v -enable-globals test .` flag when running their test suite._
-
-_Let me know in an issue if you think this is a good idea._
+This also prevents to store a constant with the number of fake first names in the code. Note that this caching mecanism is shared across all your `fake := Faker{}` instances, which limits testing slowdown to the minimum on large test suites.
 
 ### Why can't I use this module to compile my program to a single binary?
 
