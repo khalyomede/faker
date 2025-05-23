@@ -61,6 +61,8 @@ v install khalyomede.faker
   - Date
     - [Future date](#future-date)
     - [Past date](#past-date)
+  - Finance
+    - [Visa credit card number](#visa-credit-card-number)
   - Identifiers
     - [UUID v4](#uuid-v4)
   - Network
@@ -249,6 +251,24 @@ fn test_it_returns_url() {
   fake := Faker{}
 
   payment_id := fake.uuid_v4()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### Visa credit card number
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_visa_credit_card_number() {
+  mut fake := Faker{}
+
+  credit_card := fake.visa_credit_card_number()
 
   // ...
 }
