@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- IP V4 fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
+
 ### Fixed
 
 - No more "unused import" warning when compiling or running a program that imports this package ([#1](https://github.com/khalyomede/faker/issues/1)).

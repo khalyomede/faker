@@ -61,6 +61,8 @@ v install khalyomede.faker
     - [Past date](#past-date)
   - Identifiers
     - [UUID v4](#uuid-v4)
+  - Network
+    - [IP V4](#ip-v4)
   - Text
     - [Sentence](#sentence)
     - [Word](#word)
@@ -121,6 +123,24 @@ fn test_it_generates_future_date() {
   fake := Faker{}
 
   meeting_date := fake.future_date()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### IP V4
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_ip_v4() {
+  mut fake := Faker{}
+
+  ip := fake.ip_v4()
 
   // ...
 }
