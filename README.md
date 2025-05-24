@@ -79,7 +79,7 @@ v install khalyomede.faker
     - [Random element](#random-element)
 - [Switching language](#switching-language)
 - [Extending/Custom fake data](#extendingcustom-fake-data)
-- [Deterministic same values (seed)]()
+- [Deterministic same values (seed)](#deterministic-same-values-seed)
 
 ### Boolean
 
