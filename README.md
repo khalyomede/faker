@@ -81,6 +81,7 @@ v install khalyomede.faker
     - [Random element](#random-element)
   - Web
     - [User agent](#user-agent)
+    - [Top level domain](#top-level-domain)
 - [Switching language](#switching-language)
 - [Extending/Custom fake data](#extendingcustom-fake-data)
 - [Deterministic same values (seed)](#deterministic-same-values-seed)
@@ -294,6 +295,24 @@ fn test_it_generates_sentence() {
   mut fake := Faker{}
 
   book_excerpt := fake.sentence()
+}
+```
+
+[Back to examples](#examples)
+
+### Top level domain
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_top_level_domain() {
+  mut fake := Faker{}
+
+  top_level_domain := fake.top_level_domain()
+
+  // ...
 }
 ```
 
