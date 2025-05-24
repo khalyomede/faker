@@ -79,6 +79,8 @@ v install khalyomede.faker
   - Other
     - [Boolean](#boolean)
     - [Random element](#random-element)
+  - Web
+    - [User agent](#user-agent)
 - [Switching language](#switching-language)
 - [Extending/Custom fake data](#extendingcustom-fake-data)
 - [Deterministic same values (seed)](#deterministic-same-values-seed)
@@ -292,6 +294,24 @@ fn test_it_generates_sentence() {
   mut fake := Faker{}
 
   book_excerpt := fake.sentence()
+}
+```
+
+[Back to examples](#examples)
+
+### User agent
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_user_agent() {
+  mut fake := Faker{}
+
+  user_agent := fake.user_agent()
+
+  // ...
 }
 ```
 

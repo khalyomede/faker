@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - MAC address fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - Currency symbol fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - Currency code fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
+- User Agent (browser) fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 
 ### Fixed
 

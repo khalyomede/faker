@@ -1,6 +1,6 @@
 module faker
 
-import io { BufferedReader, BufferedReaderConfig }
+import io { BufferedReader }
 import os { File }
 import rand.pcg32 { PCG32RNG }
 
@@ -22,64 +22,6 @@ fn get_cache() &FileCache {
     }
 
     return cache
-}
-
-/*
-    This function will read a file and return a random line from it.
-
-    It does so by first counting the number of lines in the file.
-    Then it generates a random number between 0 and the number of lines - 1.
-
-    It then reads the file again, line by line, until it reaches the random number.
-    At which point it returns that line.
-
-    This is done to avoid loading the entire file into memory, which can be expensive for large files.
-*/
-fn (mut this Faker) random_line_in_file(file string) string {
-    file_path := this.get_file_path_for_language(file)
-
-    mut index := 0
-    mut opened_file := unsafe {
-        this.get_file(file) or { panic("Failed to open file \"${file_path}\".") }
-    }
-
-    mut reader := io.new_buffered_reader(BufferedReaderConfig{
-        reader: opened_file
-    })
-
-    defer {
-        reader.free()
-    }
-
-    lines_count := this.get_lines_count(file, mut reader)
-
-    random_index := this.random_index_in_file(file, lines_count)
-
-    opened_file.seek(0, .start) or {
-        panic("Failed to seek to the start of the file \"${file_path}\".")
-    }
-
-    mut lines_reader := io.new_buffered_reader(BufferedReaderConfig{
-        reader: opened_file
-    })
-
-    defer {
-        lines_reader.free()
-    }
-
-    for {
-        line := lines_reader.read_line() or { break }
-
-        if index == random_index {
-            return line
-        }
-
-        index += 1
-    }
-
-    panic("No line found in file \"${file_path}\".")
-
-    return ""
 }
 
 fn (mut this Faker) random_index_in_file(file string, lines_count u16) u16 {
@@ -128,7 +70,10 @@ fn (mut this Faker) random_index_in_file(file string, lines_count u16) u16 {
     return random_index
 }
 
-fn (mut this Faker) get_file(name string) !File {
+/*
+  @todo Make the FileCache a map[string(lang or shared)][string]File instead of a single map[string]File.
+*/
+fn (mut this Faker) get_file(name string, not_tied_to_lang bool) !File {
     mut file_cache := unsafe {
         get_cache()
     }
@@ -152,7 +97,7 @@ fn (mut this Faker) get_file(name string) !File {
         return opened_file
     }
 
-    opened_file := os.open(this.get_file_path_for_language(name))!
+    opened_file := os.open(this.get_file_path_for_language(name, not_tied_to_lang))!
 
     file_cache.mutex.lock()
 
@@ -206,7 +151,11 @@ fn (mut this Faker) get_lines_count(name string, mut reader BufferedReader) u16 
     return lines_count
 }
 
-fn (mut this Faker) get_file_path_for_language(name string) string {
-    return os.dir(@FILE) + "/data/${this.lang}/${name}.txt"
-}
+fn (mut this Faker) get_file_path_for_language(name string, not_tied_to_lang bool) string {
+    folder := match not_tied_to_lang {
+        true { "shared" }
+        false { this.lang.str() }
+    }
 
+    return os.dir(@FILE) + "/data/${folder}/${name}.txt"
+}
