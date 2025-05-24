@@ -69,6 +69,7 @@ v install khalyomede.faker
     - [Latitude](#latitude)
     - [Longitude](#longitude)
   - Identifiers
+    - [EAN-13](#ean-13)
     - [UUID v4](#uuid-v4)
   - Math
     - [Boolean](#boolean)
@@ -172,6 +173,24 @@ fn test_it_generates_currency_symbol() {
   mut fake := Faker{}
 
   symbol := fake.currency_symbol()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### EAN-13
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_ean_13() {
+  mut fake := Faker{}
+
+  code := fake.ean_13()
 
   // ...
 }
