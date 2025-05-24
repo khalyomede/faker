@@ -66,6 +66,7 @@ v install khalyomede.faker
     - [Currency symbol](#currency-symbol)
     - [Visa credit card number](#visa-credit-card-number)
   - Geographic
+    - [Latitude](#latitude)
     - [Longitude](#longitude)
   - Identifiers
     - [UUID v4](#uuid-v4)
@@ -243,6 +244,24 @@ fn test_it_generates_last_name() {
   mut fake := Faker{}
 
   last_name := fake.last_name()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### Latitude
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_latitude() {
+  mut fake := Faker{}
+
+  latitude := fake.latitude()
 
   // ...
 }

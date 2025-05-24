@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Top level domain fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - Base url fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - Longtiude fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
+- Latitude fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 
 ### Fixed
 
