@@ -62,6 +62,8 @@ v install khalyomede.faker
     - [Future date](#future-date)
     - [Past date](#past-date)
   - Finance
+    - [Currency code](#currency-code)
+    - [Currency symbol](#currency-symbol)
     - [Visa credit card number](#visa-credit-card-number)
   - Identifiers
     - [UUID v4](#uuid-v4)
@@ -110,6 +112,42 @@ fn test_it_generates_company_name() {
   mut fake := Faker{}
 
   company := fake.company_name()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### Currency code
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_currency_code() {
+  mut fake := Faker{}
+
+  code := fake.currency_code()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### Currency symbol
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_currency_symbol() {
+  mut faker := Faker{}
+
+  symbol := fake.currency_symbol()
 
   // ...
 }
