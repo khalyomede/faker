@@ -67,6 +67,7 @@ v install khalyomede.faker
     - [UUID v4](#uuid-v4)
   - Network
     - [IP V4](#ip-v4)
+    - [MAC address](#mac-address)
   - Text
     - [Sentence](#sentence)
     - [Word](#word)
@@ -181,6 +182,24 @@ fn test_it_generates_last_name() {
   mut fake := Faker{}
 
   last_name := fake.last_name()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### MAC address
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_mac_address() {
+  mut fake := Faker{}
+
+  mac_address := fake.mac_address()
 
   // ...
 }
