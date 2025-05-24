@@ -147,7 +147,7 @@ module test
 import khalyomede.faker { Faker }
 
 fn test_it_generates_currency_symbol() {
-  mut faker := Faker{}
+  mut fake := Faker{}
 
   symbol := fake.currency_symbol()
 
