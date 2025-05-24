@@ -1,5 +1,8 @@
 module faker
 
-pub fn (this Faker) boolean() bool {
-    return this.random_element([true, false])
+pub fn (mut this Faker) boolean() bool {
+    return match this.randomizer.u8() % 2 {
+        0 { true }
+        else { false }
+    }
 }

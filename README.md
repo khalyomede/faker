@@ -88,7 +88,7 @@ module test
 import khalyomede.faker { Faker }
 
 fn test_it_returns_a_value() {
-  fake := Faker{}
+  mut fake := Faker{}
 
   terms_of_use_accepted := fake.boolean()
 

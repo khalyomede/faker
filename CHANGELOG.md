@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - No more "unused import" warning when compiling or running a program that imports this package ([#1](https://github.com/khalyomede/faker/issues/1)).
+- `fake.boolean()` will now have a chance to produce `false` (instead of always picking `true`) ([#5](https://github.com/khalyomede/faker/issues/5)).
 
 ### [0.2.0] - 2025-05-22
 
