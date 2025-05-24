@@ -67,17 +67,18 @@ v install khalyomede.faker
     - [Visa credit card number](#visa-credit-card-number)
   - Identifiers
     - [UUID v4](#uuid-v4)
+  - Math
+    - [Boolean](#boolean)
   - Network
     - [IP V4](#ip-v4)
     - [MAC address](#mac-address)
-  - Text
-    - [Sentence](#sentence)
-    - [Word](#word)
   - Physical persons
     - [First name](#first-name)
     - [Last name](#last-name)
-  - Other
-    - [Boolean](#boolean)
+  - Text
+    - [Sentence](#sentence)
+    - [Word](#word)
+  - Utilities
     - [Random element](#random-element)
   - Web
     - [Base URL](#base-url)
