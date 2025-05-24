@@ -80,7 +80,7 @@ v install khalyomede.faker
     - [Boolean](#boolean)
     - [Random element](#random-element)
   - Web
-    - Base URL
+    - [Base URL](#base-url)
     - [User agent](#user-agent)
     - [Top level domain](#top-level-domain)
 - [Switching language](#switching-language)
