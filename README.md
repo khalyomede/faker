@@ -212,7 +212,7 @@ module test
 import khalyomede.faker { Faker }
 
 fn test_it_generates_random_fruit() {
-  fake := Faker{}
+  mut fake := Faker{}
 
   fruits := ["banana", "kiwi", "apple"]
 

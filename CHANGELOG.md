@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - No more "unused import" warning when compiling or running a program that imports this package ([#1](https://github.com/khalyomede/faker/issues/1)).
 - `fake.boolean()` will now have a chance to produce `false` (instead of always picking `true`) ([#5](https://github.com/khalyomede/faker/issues/5)).
+- `fake.random_element()` will now have a chance to pick the last value (previously if you had `fake.random_element(['banana', 'apple', 'cherry'])`, it would only pick between "banana" or "apple" and never "cherry") ([#5](https://github.com/khalyomede/faker/issues/5)).
+- `fake.random_element()` will now correctly follow the seed, such as two fake instances sharing the same seed (`fake.using_seed(56)`) will pick the same random elements.
 
 ### [0.2.0] - 2025-05-22
 
