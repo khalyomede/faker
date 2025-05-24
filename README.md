@@ -80,11 +80,28 @@ v install khalyomede.faker
     - [Boolean](#boolean)
     - [Random element](#random-element)
   - Web
+    - Base URL
     - [User agent](#user-agent)
     - [Top level domain](#top-level-domain)
 - [Switching language](#switching-language)
 - [Extending/Custom fake data](#extendingcustom-fake-data)
 - [Deterministic same values (seed)](#deterministic-same-values-seed)
+
+### Base URL
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_base_url() {
+  mut fake := Faker{}
+
+  base_url := fake.base_url()
+}
+```
+
+[Back to examples](#examples)
 
 ### Boolean
 
