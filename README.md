@@ -464,6 +464,8 @@ fn test_it_generates_the_same_word_as_first_test() {
 }
 ```
 
+[Back to examples](#examples)
+
 ## Q&A
 
 - [Why is the fake variable mutable?](#why-is-the-fake-variable-mutable)
