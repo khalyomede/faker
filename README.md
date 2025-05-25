@@ -66,6 +66,8 @@ v install khalyomede.faker
     - [Currency symbol](#currency-symbol)
     - [Visa credit card number](#visa-credit-card-number)
   - Geographic
+    - [Country code](#country-code)
+    - [Country name](#country-name)
     - [Latitude](#latitude)
     - [Longitude](#longitude)
   - Identifiers
@@ -138,6 +140,41 @@ fn test_it_generates_company_name() {
   mut fake := Faker{}
 
   company := fake.company_name()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### Country code
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_country_codes() {
+  mut fake := Faker{}
+
+  code2 := fake.country_code(format: .alpha_2)
+  code3 := fake.country_code(format: .alpha_3)
+
+  // ...
+}
+```
+
+### Country name
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_country_name() {
+  mut fake := Faker{}
+
+  name := fake.country_name()
 
   // ...
 }

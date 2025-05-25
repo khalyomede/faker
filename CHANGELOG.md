@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Latitude fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - EAN-13 fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - Email fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
+- Country name fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
+- Country code fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 
 ### Fixed
 
