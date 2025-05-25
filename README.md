@@ -86,6 +86,7 @@ v install khalyomede.faker
     - [Random element](#random-element)
   - Web
     - [Base URL](#base-url)
+    - [Email](#email)
     - [User agent](#user-agent)
     - [Top level domain](#top-level-domain)
 - [Switching language](#switching-language)
@@ -191,6 +192,24 @@ fn test_it_generates_ean_13() {
   mut fake := Faker{}
 
   code := fake.ean_13()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### Email
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_email() {
+  mut fake := Faker{}
+
+  email := fake.email()
 
   // ...
 }
