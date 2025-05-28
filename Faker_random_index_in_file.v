@@ -17,7 +17,7 @@ fn (mut this Faker) random_index_in_file(file string, lines_count u16) u16 {
 
     file_cache.mutex.runlock()
 
-    if  it_should_reset_picked_indexes {
+    if it_should_reset_picked_indexes {
         file_cache.mutex.lock()
 
         file_cache.picked_indexes[file] = [random_index]
