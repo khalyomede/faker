@@ -30,11 +30,14 @@ fn (mut this Faker) get_lines_count(name string, mut reader BufferedReader) u16 
     mut lines_count := u16(0)
 
     for {
-        _ := reader.read_line() or { break }
+        line := reader.read_line() or { break }
+
+        if line.len == 0 {
+            continue
+        }
 
         lines_count += 1
     }
-
 
     file_cache.mutex.lock()
 
