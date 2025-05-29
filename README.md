@@ -75,14 +75,19 @@ v install khalyomede.faker
     - [UUID v4](#uuid-v4)
   - Math
     - [Boolean](#boolean)
-    - [i8](#i8)
-    - [i16](#i16)
-    - [i32](#i32)
-    - [i64](#i64)
-    - [u8](#u8)
-    - [u16](#u16)
-    - [u32](#u32)
-    - [u64](#u64)
+    - Floating numbers
+      - [f32](#f32)
+      - [f64](#f64)
+    - Integers
+      - [i8](#i8)
+      - [i16](#i16)
+      - [i32](#i32)
+      - [i64](#i64)
+    - Unsigned integers
+      - [u8](#u8)
+      - [u16](#u16)
+      - [u32](#u32)
+      - [u64](#u64)
   - Network
     - [IP V4](#ip-v4)
     - [MAC address](#mac-address)
@@ -255,6 +260,42 @@ fn test_it_generates_email() {
   mut fake := Faker{}
 
   email := fake.email()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### f32
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_f32() {
+  mut fake := Faker{}
+
+  number := fake.f32()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### f64
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_f64() {
+  mut fake := Faker{}
+
+  number := fake.f64()
 
   // ...
 }
