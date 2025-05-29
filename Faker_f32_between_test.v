@@ -1,7 +1,6 @@
 module test
 
 import faker { Faker }
-import math
 
 fn test_it_generates_f32_within_range() {
     mut fake := Faker{}
