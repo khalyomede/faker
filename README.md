@@ -88,6 +88,10 @@ v install khalyomede.faker
       - [u16](#u16)
       - [u32](#u32)
       - [u64](#u64)
+      - [u8 between](#u8-between)
+      - [u16 between](#u16-between)
+      - [u32 between](#u32-between)
+      - [u64 between](#u64-between)
   - Network
     - [IP V4](#ip-v4)
     - [MAC address](#mac-address)
@@ -589,6 +593,24 @@ fn test_it_generates_u16() {
 
 [Back to examples](#examples)
 
+### u16 between
+
+```v
+module test
+
+import faker { Faker }
+
+fn test_it_generates_u16_between_two_numbers() {
+  mut fake := Faker{}
+
+  number := fake.u16_between(min: 1, max: 65_535)
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
 ### u32
 
 ```v
@@ -600,6 +622,24 @@ fn test_it_generates_u32() {
   mut fake := Faker{}
 
   number := fake.u32()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### u32 between
+
+```v
+module test
+
+import faker { Faker }
+
+fn test_it_generates_u32_between_two_numbers() {
+  mut fake := Faker{}
+
+  number := fake.u32_between(min: 12_500, max: 55_000)
 
   // ...
 }
@@ -625,6 +665,24 @@ fn test_it_generates_u64() {
 
 [Back to examples](#examples)
 
+### u64 between
+
+```v
+module test
+
+import faker { Faker }
+
+fn test_it_generates_u64_between_two_numbers() {
+  mut fake := Faker{}
+
+  number := fake.u64_between(min: 1, max: 1_000_000)
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
 ### u8
 
 ```v
@@ -636,6 +694,24 @@ fn test_it_generates_u8() {
   mut fake := Faker{}
 
   number := fake.u8()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### u8 between
+
+```v
+module test
+
+import faker { Faker }
+
+fn test_it_generates_u8_between_two_numbers() {
+  mut fake := Faker{}
+
+  number := fake.u8_between(min: 12, max: 50)
 
   // ...
 }
