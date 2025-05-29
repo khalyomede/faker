@@ -78,6 +78,8 @@ v install khalyomede.faker
     - Floating numbers
       - [f32](#f32)
       - [f64](#f64)
+      - [f32 between](#f32-between)
+      - [f64 between](#f64-between)
     - Integers
       - [i8](#i8)
       - [i16](#i16)
