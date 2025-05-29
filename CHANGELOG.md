@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Email fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - Country name fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - Country code fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
+- u8/u16/u32/u64 fake data.
 
 ### Fixed
 

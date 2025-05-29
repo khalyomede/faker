@@ -75,6 +75,10 @@ v install khalyomede.faker
     - [UUID v4](#uuid-v4)
   - Math
     - [Boolean](#boolean)
+    - [u8](#u8)
+    - [u16](#u16)
+    - [u32](#u32)
+    - [u64](#u64)
   - Network
     - [IP V4](#ip-v4)
     - [MAC address](#mac-address)
@@ -443,6 +447,78 @@ fn test_it_generates_top_level_domain() {
   mut fake := Faker{}
 
   top_level_domain := fake.top_level_domain()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### u16
+
+```v
+module test
+
+import faker { Faker }
+
+fn test_it_generates_u16() {
+  mut fake := Faker{}
+
+  number := fake.u16()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### u32
+
+```v
+module test
+
+import faker { Faker }
+
+fn test_it_generates_u32() {
+  mut fake := Faker{}
+
+  number := fake.u32()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### u64
+
+```v
+module test
+
+import faker { Faker }
+
+fn test_it_generates_u64() {
+  mut fake := Faker{}
+
+  number := fake.u64()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### u8
+
+```v
+module test
+
+import faker { Faker }
+
+fn test_it_generates_u8() {
+  mut fake := Faker{}
+
+  number := fake.u8()
 
   // ...
 }
