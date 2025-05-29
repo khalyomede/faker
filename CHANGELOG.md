@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - f32/f64 fake data.
 - u8/u16/u32/u64 "between" fake data.
 - i8/i16/i32/i64 "between" fake data.
+- f32/f64 "between" fake data.
 
 ### Fixed
 

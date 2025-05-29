@@ -293,6 +293,24 @@ fn test_it_generates_f32() {
 
 [Back to examples](#examples)
 
+### f32 between
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_f32_between_range() {
+  mut fake := Faker{}
+
+  number := fake.f32_between(min: -35.546, max: 106.71)
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
 ### f64
 
 ```v
@@ -304,6 +322,24 @@ fn test_it_generates_f64() {
   mut fake := Faker{}
 
   number := fake.f64()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### f64 between
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_f64_between_range() {
+  mut fake := Faker{}
+
+  number := fake.f64_between(min: -35_000.546, max: 106_000.71)
 
   // ...
 }
