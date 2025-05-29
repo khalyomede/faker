@@ -83,6 +83,10 @@ v install khalyomede.faker
       - [i16](#i16)
       - [i32](#i32)
       - [i64](#i64)
+      - [i8 between](#i8-between)
+      - [i16 between](#i16-between)
+      - [i32 between](#i32-between)
+      - [i64 between](#i64-between)
     - Unsigned integers
       - [u8](#u8)
       - [u16](#u16)
@@ -361,6 +365,24 @@ fn test_it_generates_i16() {
 
 [Back to examples](#examples)
 
+### i16 between
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_i16_between_range() {
+  fake := Faker{}
+
+  number := fake.i16_between(min: -121, max: 595)
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
 ### i32
 
 ```v
@@ -372,6 +394,24 @@ fn test_it_generates_i32() {
   fake := Faker{}
 
   number := fake.i32()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### i32 between
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_i32_between_range() {
+  fake := Faker{}
+
+  number := fake.i32_between(min: -1_229, max: 5_941)
 
   // ...
 }
@@ -397,6 +437,24 @@ fn test_it_generates_i64() {
 
 [Back to examples](#examples)
 
+### i64 between
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_i64_between_range() {
+  fake := Faker{}
+
+  number := fake.i64_between(min: -12_500, max: 59_000)
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
 ### i8
 
 ```v
@@ -408,6 +466,24 @@ fn test_it_generates_i8() {
   fake := Faker{}
 
   number := fake.i8()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### i8 between
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_i8_between_range() {
+  fake := Faker{}
+
+  number := fake.i8_between(min: -12, max: 59)
 
   // ...
 }
