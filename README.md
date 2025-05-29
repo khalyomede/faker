@@ -75,6 +75,10 @@ v install khalyomede.faker
     - [UUID v4](#uuid-v4)
   - Math
     - [Boolean](#boolean)
+    - [i8](#i8)
+    - [i16](#i16)
+    - [i32](#i32)
+    - [i64](#i64)
     - [u8](#u8)
     - [u16](#u16)
     - [u32](#u32)
@@ -287,6 +291,78 @@ fn test_it_generates_future_date() {
   fake := Faker{}
 
   meeting_date := fake.future_date()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### i16
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_i16() {
+  fake := Faker{}
+
+  number := fake.i16()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### i32
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_i32() {
+  fake := Faker{}
+
+  number := fake.i32()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### i64
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_i64() {
+  fake := Faker{}
+
+  number := fake.i64()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### i8
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_i8() {
+  fake := Faker{}
+
+  number := fake.i8()
 
   // ...
 }
