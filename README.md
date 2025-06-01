@@ -66,6 +66,7 @@ v install khalyomede.faker
     - [Currency symbol](#currency-symbol)
     - [Visa credit card number](#visa-credit-card-number)
   - Geographic
+    - [City](#city)
     - [Country code](#country-code)
     - [Country name](#country-name)
     - [Latitude](#latitude)
@@ -145,6 +146,24 @@ fn test_it_returns_a_value() {
   mut fake := Faker{}
 
   terms_of_use_accepted := fake.boolean()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### City
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_city() {
+  mut fake := Faker{}
+
+  city := fake.city()
 
   // ...
 }
