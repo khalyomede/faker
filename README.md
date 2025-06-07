@@ -2,6 +2,20 @@
 
 Generate fake values for your tests.
 
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_email() {
+  fake := Faker{}
+
+  email := fake.email()
+
+  // ...
+}
+```
+
 ## Summary
 
 - [About](#about)
