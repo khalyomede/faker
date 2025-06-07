@@ -85,6 +85,7 @@ v install khalyomede.faker
     - [Country name](#country-name)
     - [Latitude](#latitude)
     - [Longitude](#longitude)
+    - [Zip code](#zip-code)
   - Identifiers
     - [EAN-13](#ean-13)
     - [UUID v4](#uuid-v4)
@@ -931,6 +932,24 @@ fn test_it_generates_word() {
   mut fake := Faker{}
 
   book_category := fake.word()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### Zip code
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_zip_code() {
+  mut fake := Faker{}
+
+  zip_code := fake.zip_code()
 
   // ...
 }
