@@ -118,6 +118,7 @@ v install khalyomede.faker
       - [u64 between](#u64-between)
   - Network
     - [IP V4](#ip-v4)
+    - [IP V6](#ip-v6)
     - [MAC address](#mac-address)
   - Physical persons
     - [First name](#first-name)
@@ -576,6 +577,24 @@ fn test_it_generates_ip_v4() {
   mut fake := Faker{}
 
   ip := fake.ip_v4()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### IP V6
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_ip_v6() {
+  mut fake := Faker{}
+
+  ip := fake.ip_v6()
 
   // ...
 }
