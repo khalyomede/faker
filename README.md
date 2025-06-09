@@ -70,6 +70,8 @@ v install khalyomede.faker
 ## Examples
 
 - Fake data
+  - Color
+    - [Hex color](#hex-color)
   - Company
     - [Company name](#company-name)
   - Date
@@ -595,6 +597,24 @@ fn test_it_generates_ip_v6() {
   mut fake := Faker{}
 
   ip := fake.ip_v6()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### Hex color
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_hex_color() {
+  mut fake := Faker{}
+
+  color := fake.hex_color()
 
   // ...
 }
