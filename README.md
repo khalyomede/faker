@@ -85,7 +85,7 @@ v install khalyomede.faker
     - [Country name](#country-name)
     - [Latitude](#latitude)
     - [Longitude](#longitude)
-    - [Street](#street)
+    - [Street name](#street-name)
     - [Zip code](#zip-code)
   - Identifiers
     - [EAN-13](#ean-13)
@@ -706,17 +706,17 @@ fn test_it_generates_sentence() {
 
 [Back to examples](#examples)
 
-### Street
+### Street name
 
 ```v
 module test
 
 import khalyomede.faker { Faker }
 
-fn test_it_generates_street() {
+fn test_it_generates_street_name() {
   mut fake := Faker{}
 
-  street_name := fake.street()
+  street_name := fake.street_name()
 
   // ...
 }
