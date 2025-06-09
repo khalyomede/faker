@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Street fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - IP V6 fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 - Hex color fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
+- Job title fake data ([#3](https://github.com/khalyomede/faker/issues/3)).
 
 ## [0.3.0] - 2025-05-29
 

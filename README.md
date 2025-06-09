@@ -74,6 +74,7 @@ v install khalyomede.faker
     - [Hex color](#hex-color)
   - Company
     - [Company name](#company-name)
+    - [Job title](#job-title)
   - Date
     - [Future date](#future-date)
     - [Past date](#past-date)
@@ -597,6 +598,24 @@ fn test_it_generates_ip_v6() {
   mut fake := Faker{}
 
   ip := fake.ip_v6()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
+### Job title
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_job_title() {
+  mut fake := Faker{}
+
+  job := fake.job_title()
 
   // ...
 }
