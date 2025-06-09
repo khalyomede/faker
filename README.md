@@ -85,6 +85,7 @@ v install khalyomede.faker
     - [Country name](#country-name)
     - [Latitude](#latitude)
     - [Longitude](#longitude)
+    - [Street](#street)
     - [Street name](#street-name)
     - [Zip code](#zip-code)
   - Identifiers
@@ -706,7 +707,29 @@ fn test_it_generates_sentence() {
 
 [Back to examples](#examples)
 
+### Street
+
+The different with [street name](#street-name) is street is prefixed with the street number.
+
+```v
+module test
+
+import khalyomede.faker { Faker }
+
+fn test_it_generates_street() {
+  mut fake := Faker{}
+
+  street := fake.street()
+
+  // ...
+}
+```
+
+[Back to examples](#examples)
+
 ### Street name
+
+The different with [street](#street) is street name is not prefixed with the street number.
 
 ```v
 module test
