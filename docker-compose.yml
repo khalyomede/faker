@@ -7,6 +7,14 @@ services:
       - .:/home/alpine/app
       - ./docker-data/v/.vmodules/:/root/.vmodules
 
+  v0411:
+    image: khalyomede/vlang:0.4.11-alpine
+    entrypoint: v
+    working_dir: /home/alpine/app
+    volumes:
+      - .:/home/alpine/app
+      - ./docker-data/v/.vmodules/:/root/.vmodules
+
   v0410:
     image: khalyomede/vlang:0.4.10-alpine
     entrypoint: v
