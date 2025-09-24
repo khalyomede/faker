@@ -1,12 +1,115 @@
 module faker
 
 pub fn Currency.cases() []Currency {
-    mut cases := []Currency{}
-
-    $for currency in Currency.values {
-        case := Currency.from(currency.name) or { panic(err) }
-        cases << case
-    }
-
-    return cases
+    return [
+        Currency.afghani
+        Currency.argentina_peso
+        Currency.aruba_guilder
+        Currency.australia_dollar
+        Currency.azerbaijan_manat
+        Currency.bahamas_dollar
+        Currency.baht
+        Currency.balboa
+        Currency.barbados_dollar
+        Currency.belarus_ruble
+        Currency.belize_dollar
+        Currency.bermuda_dollar
+        Currency.brunei_darusalam_dollar
+        Currency.bolivar
+        Currency.boliviano
+        Currency.convertible_mark
+        Currency.canada_dollar
+        Currency.cayman_islands_dollar
+        Currency.cedi
+        Currency.chile_peso
+        Currency.colombia_peso
+        Currency.cordoba
+        Currency.costa_rica_colon
+        Currency.cuba_peso
+        Currency.denar
+        Currency.denmark_krone
+        Currency.dong
+        Currency.dominican_republic_peso
+        Currency.east_caribbean_dollar
+        Currency.egypt_pound
+        Currency.euro
+        Currency.falkland_islands_pound
+        Currency.forint
+        Currency.fiji_dollar
+        Currency.gibraltar_pound
+        Currency.guarani
+        Currency.guernsey_pound
+        Currency.guyana_dollar
+        Currency.hong_kong_dollar
+        Currency.hryvnia
+        Currency.iceland_krona
+        Currency.india_rupee
+        Currency.iran_riyal
+        Currency.isle_of_man_pound
+        Currency.jamaica_dollar
+        Currency.jersey_pound
+        Currency.koruna
+        Currency.kip
+        Currency.kuna
+        Currency.kyrgyzstan_som
+        Currency.lebanon_pound
+        Currency.lek
+        Currency.lempira
+        Currency.leu
+        Currency.lev
+        Currency.liberia_dollar
+        Currency.lira
+        Currency.mauritius_rupee
+        Currency.mexico_peso
+        Currency.metical
+        Currency.naira
+        Currency.namibia_dollar
+        Currency.nepal_rupee
+        Currency.netherlands_antilles_guilder
+        Currency.new_taiwan_dollar
+        Currency.new_zealand_dollar
+        Currency.north_korea_won
+        Currency.norway_krone
+        Currency.oman_riyal
+        Currency.pakistan_rupee
+        Currency.philipine_peso
+        Currency.pula
+        Currency.qatar_riyal
+        Currency.quetzal
+        Currency.rand
+        Currency.real
+        Currency.riel
+        Currency.ringgit
+        Currency.rupiah
+        Currency.russia_ruble
+        Currency.saint_helena_pound
+        Currency.saudi_arabia_riyal
+        Currency.serbia_dinar
+        Currency.seychelles_rupee
+        Currency.shekel
+        Currency.shilling
+        Currency.singapore_dollar
+        Currency.sol
+        Currency.solomon_islands_dollar
+        Currency.south_korea_won
+        Currency.sri_lanka_rupee
+        Currency.suriname_dollar
+        Currency.sweden_krona
+        Currency.switzerland_franc
+        Currency.syria_pound
+        Currency.tenge
+        Currency.trinidad_and_tobago_dollar
+        Currency.tughrik
+        Currency.turkmenistan_manat
+        Currency.tuvalu_dollar
+        Currency.united_kingdom_pound
+        Currency.united_states_dollar
+        Currency.uruguay_peso
+        Currency.uzbekistan_som
+        Currency.yen
+        Currency.yemen_riyal
+        Currency.yuan
+        Currency.zimbabwe_dollar
+        Currency.zloty
+    ]
 }
