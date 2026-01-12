@@ -24,6 +24,15 @@ jobs:
       - name: Tests (latest)
         run: docker compose run --rm v -N -W test .
 
+  test_0_4_12:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tests (0.4.12)
+        run: docker compose run --rm v0412 -N -W test .
+
   test_0_4_11:
     runs-on: ubuntu-latest
 
