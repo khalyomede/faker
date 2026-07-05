@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Support for V 0.5.1.
+
 ### Fixed
 
 - Fixed compilation error about `fake.f64()` and `fake.ip_v4_segment()` ([#8](https://github.com/khalyomede/faker/issues/8), [#9](https://github.com/khalyomede/faker/issues/9)).
