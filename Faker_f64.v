@@ -6,7 +6,7 @@ pub fn (mut this Faker) f64() f64 {
     is_negative := number < 0
 
     return match is_negative {
-        true { number + fraction }
-        false { number - fraction }
+        true { f64(number + fraction) }
+        false { f64(number - fraction) }
     }
 }
